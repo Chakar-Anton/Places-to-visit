@@ -37,6 +37,7 @@ namespace ТурОператор
             }
             catch
             {
+                
                 MainWindow MW = new MainWindow();
                 MW.ShowDialog();
             }
