@@ -13,16 +13,35 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Places_worth_visiting
+namespace ТурОператор
 {
     /// <summary>
-    /// Interaction logic for CountryPage.xaml
+    /// Логика взаимодействия для CountryPage.xaml
     /// </summary>
     public partial class CountryPage : Page
     {
         public CountryPage()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Label_error.Content = "";
+            for (int i = 0; i < Functions.GeneralList.Count(); i++)
+            {
+                if (TextBox_Name.Text == Functions.GeneralList[i].Name) Label_error.Content = "Страна с таким именем уже существует";
+
+            }
+            if (Label_error.Content == "")
+            {
+                List<Sight> tempList = new List<Sight>();
+                Functions.GeneralList.Add(new Country(TextBox_Name.Text, tempList));
+                NavigationService nav;
+                nav = NavigationService.GetNavigationService(this);
+                nav.GoBack();
+            }
+
         }
     }
 }
