@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Country.cs" />
+    <Compile Include="Functions.cs" />
+    <Compile Include="Sight.cs" />
     <Compile Include="SightEdit.xaml.cs">
       <DependentUpon>SightEdit.xaml</DependentUpon>
     </Compile>
